@@ -25,10 +25,13 @@ Route::get('/home', 'App\Http\Controllers\BooksController@home');
 
 Route::get('/search', 'App\Http\Controllers\BooksController@search');
 
+Route::post('/searchbook', 'App\Http\Controllers\BooksController@searchbook');
+
+Route::post('/addbook', 'App\Http\Controllers\BooksController@addbook');
+
 Route::get('/profile', 'App\Http\Controllers\BooksController@profile');
 
 Route::get('/readinfo', 'App\Http\Controllers\BooksController@readinfo');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -11,6 +11,11 @@
   <h1 class="text-center">読書情報を写すページです</h1>
   <p class="text-center border">モーダル付きで各情報を入力します</p>
   <div>
+    <div class="row justify-content-center">
+      <p class="col-3">
+        <img src="{{$data->image}}" alt="">
+      </p>
+    </div>
     <form action="editreading" method="post">
       <p>
         <h3>目的を入力</h3>

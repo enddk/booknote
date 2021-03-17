@@ -16,6 +16,19 @@
       <a href="readinfo">本の読書管理</a>
     </div>
   </div>
+
+  <div class="row">
+    @foreach($books as $book)
+      <div class="col-4">
+        <a href="readinfo?id={{$book->id}}" class="book border col-4">
+          <img src="{{$book->image}}" alt="" class="w-100 h-100">
+        </a>
+      </div>
+    @endforeach
+  </div>
+ 
+
+
   <p>
     <a href="search">本追加・検索ページ</a>
   </p>

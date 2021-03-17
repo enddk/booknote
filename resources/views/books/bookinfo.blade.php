@@ -10,6 +10,31 @@
 <body>
   <h1 class="text-center">本情報を写すページです</h1>
   <p class="text-center border">vueでコメント・いいねを作ります</p>
+
+  @foreach($items as $item)
+      <div class="col-12 row justify-content-center">
+        <div class="damy border" style="width:40%;">
+          <img src="{{$item->image}}" alt="" class="w-100 h-100">
+        </div>
+      </div>
+      <div class="col-12 border">
+        <h2 class="text-center my-3">{{$item->title}}</h2>
+        <form action="edit" method="post">
+          @csrf
+          <input type="hidden" name="id" value="{{$item->id}}">
+          <textarea name="record" cols="30" rows="10" class="form-control">{{$item->record}}</textarea>
+          <p class="my-2" style="display:flex; justify-content:space-between;">
+            <a class="btn btn-danger" type="submit" href="delete?id={{$item->id}}">
+              削除
+            </a>
+            <button class="btn btn-primary" type="submit">
+              編集
+            </button>
+          </p>
+        </form>
+      </div>
+    @endforeach
+
   <p>
     <a href="search">本追加・検索ページ</a>
   </p>
